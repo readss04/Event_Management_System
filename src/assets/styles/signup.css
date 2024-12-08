@@ -1,0 +1,334 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: Montserrat;
+  scroll-behavior: smooth;
+}
+
+body {
+  background-color: #E7F0DC;
+}
+
+.dark-green {
+  background-color: #436850;
+  width: 790px;
+  height: 740px;
+  position: absolute;
+  z-index: -1;
+  border-radius: 0% 100% 75% 25% / 100% 0% 100% 0%;
+  animation: slideinRight 1s ease-in-out forwards;
+}
+
+@keyframes slideinRight {
+  from {
+    opacity: 0.2;
+    transform: translateX(-300px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+.sigin-separation {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  place-items: center;
+  padding-top: 13%;
+}
+
+.signin-description {
+  max-width: 550px;
+  margin-left: 5%;
+  margin-top: -25%;
+}
+
+.signin-title {
+  color: #FFFFFF;
+  font-size: 65px;
+  margin-bottom: 10px;
+  animation: slideinRighttext 1s ease-in-out forwards;
+}
+
+@keyframes slideinRighttext {
+  from {
+    opacity: 0.2;
+    transform: translateX(-200px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+.sigin-desc {
+  color: #FFFFFF;
+  font-weight: 450;
+  font-size: 18px;
+  animation: slideinRighttext1 1s ease-in-out forwards;
+}
+
+@keyframes slideinRighttext1 {
+  from {
+    opacity: 0.2;
+    transform: translateX(-150px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+.form {
+  width: 98%;
+  max-width: 400px;
+  position: relative;
+}
+
+.form .header {
+  text-align: center;
+  padding: 20px;
+  display: grid;
+  gap: 5px;
+  margin-top: -10%;
+  animation: fadeIn 0.5s ease-in-out forwards;
+}
+
+.form .header p {
+  color: #555;
+}
+
+.form .body {
+  box-shadow: 0px 5px 5px 2px rgba(0, 0, 0, 0.2);
+  border-radius: 20px;
+  height: 370px;
+  overflow: hidden;
+  position: relative;
+}
+
+.form .body .pagination {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 15px;
+  padding: 15px 20px;
+  animation: slideIn 0.5s ease-in-out forwards;
+}
+
+.form .body .pagination .number {
+  width: 28px;
+  height: 28px;
+  text-align: center;
+  line-height: 28px;
+  border-radius: 50%;
+  background: #526E48;
+  color: #fff;
+  font-size: 15px;
+  transition: background 0.3s ease;
+}
+
+.form .body .pagination .number:hover {
+  background: #62825D;
+}
+
+.form .body .pagination .bar {
+  width: 50px;
+  height: 4px;
+  background: #62825D;
+  border-radius: 5px;
+}
+
+.form .body .pagination .active ~ div {
+  background: #ddd;
+  color: #111;
+}
+
+.form .steps {
+  width: 400%;
+  display: flex;
+  transition: transform 0.5s ease-in-out;
+}
+
+.form .steps .step {
+  width: 98vw;
+  max-width: 400px;
+  padding: 5px 15px 15px;
+  overflow: hidden;
+  margin-top: 30px;
+  opacity: 0;
+  transform: translateY(20px);
+  animation: stepIn 0.5s ease-in-out forwards;
+}
+
+.form .steps .step:nth-child(1) {
+  animation-delay: 0s; /* Immediate start */
+}
+
+.form .steps .step:nth-child(2) {
+  animation-delay: 0.5s; /* Sequential start */
+}
+
+.form .steps .step:nth-child(3) {
+  animation-delay: 1s; /* Sequential start */
+}
+
+.form .steps .step:nth-child(4) {
+  animation-delay: 1.5s; /* Sequential start */
+}
+
+.form .steps .step h4 {
+  margin-bottom: 5px;
+  margin-top: -9px;
+}
+
+.form .steps .step p {
+  color: #555;
+  max-width: 90%;
+  font-size: 15px;
+}
+
+.form .steps .step .grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 15px;
+  margin-top: 20px;
+}
+
+.form .steps .step .grid .col label {
+  display: block;
+  margin-bottom: 5px;
+  font-weight: 500;
+  font-size: 15px;
+}
+
+.form .steps .step .grid .col input {
+  width: 100%;
+  padding: 8px;
+  border: 1px solid #bbb;
+  font-size: 15px;
+  border-radius: 8px;
+}
+
+.form .steps .step .grids {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 15px;
+  margin-top: 20px;
+}
+
+.form .steps .step .grids .col label {
+  display: block;
+  margin-bottom: 5px;
+  font-weight: 500;
+  font-size: 15px;
+}
+
+.form .steps .step .grids .col input {
+  width: 100%;
+  padding: 8px;
+  border: 1px solid #bbb;
+  font-size: 15px;
+  border-radius: 8px;
+}
+
+.form .steps .step .confirmation {
+  display: grid;
+  text-align: center;
+  place-items: center;
+  gap: 15px;
+}
+
+.form .steps .step .confirmation button {
+  background: #00aaee;
+  color: #fff;
+  padding: 10px 20px;
+  border: none;
+  outline: none;
+  font-size: 15px;
+  border-radius: 20px;
+  cursor: pointer;
+  transition: background 0.3s ease-in-out;
+}
+
+.form .steps .step .confirmation button:hover {
+  background: #007acc;
+}
+
+.form .footer {
+  padding: 15px 0px;
+  display: flex;
+  justify-content: space-between;
+  animation: fadeIn 1s ease-in-out forwards;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes slideIn {
+  from {
+    transform: translateY(60px);
+    opacity: 0;
+  }
+  to {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+
+@keyframes stepIn {
+  0% {
+    opacity: 0;
+    transform: translateY(60px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.signup-button {
+  margin-left: 37%;
+  margin-top: 7%;
+  padding: 15px 20px;
+  font-size: 15px;
+  border: 1px solid #bbb;
+  background: #62825D;
+  color: #fff;
+  border-radius: 5px;
+  cursor: pointer;
+  outline: none;
+  font-weight: 500;
+  transition: .15s ease-in-out background;
+}
+
+.signup-button:hover {
+  background: #536e50;
+}
+
+.signup-button:active {
+  opacity: 0.8;
+}
+
+.form .footer button {
+  padding: 5px 10px;
+  font-size: 15px;
+  border: 1px solid #bbb;
+  background: #fff;
+  border-radius: 5px;
+  cursor: pointer;
+  outline: none;
+}
+
+.sigin-vectorpng {
+  width: 450px;
+  margin-left: 250px;
+  margin-top: -220px;
+  animation: slideinRight 1s ease-in-out;
+}

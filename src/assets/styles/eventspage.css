@@ -1,0 +1,632 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: Montserrat;
+  scroll-behavior: smooth;
+}
+
+.light-green {
+  position: fixed;
+  width: 100%;
+  height: 70px;
+  top: 0;
+  left: 0;
+  box-shadow: 0px 3px 15px rgba(0, 0, 0, 0.3);
+  background-color: #436850;
+  z-index: 1;
+}
+
+/* Sidebar Styles */
+.sidebar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  width: 80px;
+  background-color: #174535;
+  padding: 0.4rem 0.8rem;
+  transition: width 0.5s ease;
+  z-index: 1;
+  border-radius: 8px;
+  overflow: hidden;
+}
+
+.sidebar.active {
+  width: 250px;
+}
+
+/* Title styles */
+.title-name {
+  margin-left: 25px;
+  margin-top: -30px;
+  font-size: 18px;
+}
+
+.sidebar #btn {
+  position: absolute;
+  color: #E7F0DC;
+  top: 0.4rem;
+  left: 50%;
+  font-size: 1.2rem;
+  line-height: 50px;
+  transform: translateX(-50%);
+  cursor: pointer;
+}
+
+.sidebar.active #btn {
+  left: 90%;
+}
+
+/* Logo styles */
+.sidebar .top .logo {
+  color: #E7F0DC;
+  display: flex;
+  height: 90px;
+  width: 100%;
+  align-items: center;
+  pointer-events: none;
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+
+.sidebar.active .top .logo {
+  opacity: 1;
+}
+
+.top .logo i {
+  margin-top: 50px;
+  font-size: 2rem;
+  margin-right: 5px;
+}
+
+.sidebar ul li {
+  position: relative;
+  list-style-type: none;
+  height: 50px;
+  width: 90%;
+  margin: 0.8rem auto;
+  line-height: 50px;
+}
+
+.sidebar ul li a, .logout-btn {
+  color: #D6EFD8;
+  display: flex;
+  align-items: center;
+  text-decoration: none;
+  border-radius: 0.8rem;
+  transition: 0.25s ease-in-out background-color;
+}
+
+.sidebar ul li .logout-btn:hover {
+  background-color: rgba(128, 175, 129, 0.395);
+}
+
+.sidebar ul li a i .logout-btn {
+  min-width: 50px;
+  text-align: center;
+  height: 50px;
+  border-radius: 12px;
+  line-height: 50px;
+}
+
+.sidebar .nav-item {
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+
+.sidebar.active .nav-item {
+  opacity: 1;
+}
+/*.sidebar ul li .tooltip {
+  position: absolute;
+  left: 125px;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  box-shadow: 0 0.5rem 0.8rem rgba(0, 0, 0, 0.2);
+  border-radius: .6rem;
+  padding: .4rem 1.2rem;
+  line-height: 1.8rem;
+  z-index: 20;
+  opacity: 0;
+}
+
+.sidebar ul li:hover .tooltip {
+  opacity: 1;
+}
+
+.sidebar.active ul li .tooltip {
+  display: none;
+}
+*/
+
+/* EVENTS SECTION */
+
+.events-section {
+  padding-top: 100px;
+  padding-left: 130px;
+  display: grid;
+  grid-template-columns: 1fr 470px;
+}
+
+.events-title {
+  font-size: 40px;
+  color: #436850;
+  margin-bottom: 20px;
+  animation-name: slideinTop;
+    animation-duration:1s;
+    animation-timing-function:ease-in-out;
+    animation-delay:0s;
+    animation-iteration-count: 1;
+}
+
+@keyframes slideinTop {
+  from {
+    opacity: 0.2;
+    transform: translateY(40px);
+  }
+
+  to {
+    opacity: 1;
+    transform: rotateY(0);
+  }
+}
+.events-line {
+  width: 145%;
+  animation-name: slideinTopline;
+  animation-duration:1s;
+  animation-timing-function:ease-in-out;
+  animation-delay:0s;
+  animation-iteration-count: 1;
+  color: #436850;
+  border: 1px solid;
+ 
+}
+
+@keyframes slideinTopline {
+  from {
+    opacity: 0.2;
+    transform: translateY(20px);
+  }
+
+  to {
+    opacity: 1;
+    transform: rotateY(0);
+  }
+}
+
+.events-container {
+  padding-left: 130px;
+  margin-top: 20px;
+  display:grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  align-items: center;
+  row-gap: 30px;
+  animation-name: slideinTopline;
+  animation-duration:1s;
+  animation-timing-function:ease-in-out;
+  animation-delay:0s;
+  animation-iteration-count: 1;
+  z-index: -1;
+}
+
+
+.events-glasscard {
+  width: 430px;
+  height: 630px;
+  background-color: #436850;
+  border-radius: 7px;
+  animation: slideintotopglasscard .75s ease-in-out;
+  animation-timeline: view();
+  animation-range: entry 0% cover 40%;
+}
+
+@keyframes slideintotopglasscard {
+  from {
+    opacity: 0.2;
+    transform: translateY(50px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.events-image {
+  margin-left: -100px;
+}
+
+.mark {
+  width: 430px;
+  height: 250px;
+  border-radius: 7px 7px 0px 0px;
+  margin-left: 100px;
+  object-fit: cover;
+  object-position: center;
+}
+
+.events-test {
+  display: grid;
+  grid-template-rows: 1fr;
+  margin-left: 20px;
+  margin-top: 10px;
+  line-height: 30px;
+}
+
+.glasscard-title {
+  color: #D6EFD8;
+  font-size: 20px;
+  font-weight: 600;
+  margin-top: 1%;
+
+}
+
+.name-highlight {
+  color: #D6EFD8;
+  font-weight: 600;
+  font-size: 14px;
+  margin-top: 5%;
+}
+
+.name {
+  font-weight: 400;
+  color: #D6EFD8;
+  font-size: 14px;
+  margin-top: -23%;
+}
+
+.when-highlight {
+  color: #D6EFD8;
+  font-weight: 600;
+  font-size: 14px;
+  margin-top: 1%;
+}
+
+.when {
+  font-weight: 400;
+}
+
+.where-highlight {
+  color: #D6EFD8;
+  font-weight: 600;
+  font-size: 14px;
+  margin-top: 1%;
+}
+
+.where {
+  font-weight: 400;
+}
+
+.register-button {
+ margin-left: 9%;
+ margin-top: 30px;
+ text-decoration: none;
+ color: #E7F0DC;
+ font-size: 15px;
+ font-weight: 600;
+ background-color: #436850;
+ display: inline-block;
+ padding: 10px 15px;
+ border-radius: 5px;
+ box-shadow: 0px 3px 10px rgba(0, 0, 0, 0.150);
+ transition: .25s ease-in-out box-shadow,
+ .25s ease-in-out background-color,
+ .25s ease-in-out color;
+ animation-name: slideinActionButton;
+ animation-duration:1s;
+ animation-timing-function:ease-in-out;
+ animation-delay:0s;
+ animation-iteration-count: 1;
+}
+
+.register-button:hover {
+  box-shadow: 0px 3px 10px rgba(0, 0, 0, 0.7);
+  background-color: #E7F0DC;
+  color: #436850;
+}
+
+.register-button:active {
+  opacity: 0.6;
+}
+
+@keyframes slideinActionButton {
+  from {
+    opacity: 0.2;
+    transform: translateY(50px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.desc-highlight {
+  color: #D6EFD8;
+  font-weight: 450;
+  margin-top: 10px;
+  font-size: 13px;
+  max-width: 400px;
+}
+
+.test4 {
+  margin-top: 20px;
+  display: grid;
+  grid-template-rows: 1fr;
+  margin-top: -12px;
+  }
+
+
+.test5 {
+  margin-top: 15px;
+  width: 95%;
+  opacity: 0.4;
+}
+
+/* Logout Modal Styles */
+.modal-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background-color: rgba(0, 0, 0, 0.6);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 1000;
+  animation: fadeIn 0.3s ease-in-out; /* Fade-in animation */
+}
+
+.modal-content {
+  background: #E7F0DC;
+  padding: 20px;
+  border-radius: 8px;
+  text-align: center;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+  animation: slideIn 0.3s ease-in-out; /* Slide-in animation */
+}
+
+.modal-actions {
+  margin-top: 20px;
+}
+
+.yes-button,
+.no-button {
+  margin: 5px;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  animation: buttonPop 0.3s ease-in-out; /* Button pop effect */
+}
+
+.yes-button {
+  background-color: #436850;
+  color: #E7F0DC;
+  transition: .15s ease-in-out background-color;
+}
+
+.yes-button:hover {
+  background-color: #174535;
+}
+
+.yes-button:active {
+  opacity: 0.8;
+}
+
+.no-button {
+  background-color: #f44336;
+  color: #E7F0DC;
+}
+
+.search-input {
+  padding: 10px;
+  margin-bottom: 20px;
+  width: 100%;
+  max-width: 400px;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  animation-name: slideinTop;
+  animation-duration:1s;
+  animation-timing-function:ease-in-out;
+  animation-delay:0s;
+  animation-iteration-count: 1;
+}
+
+/* Animations */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes slideIn {
+  from {
+    transform: translateY(-20px);
+    opacity: 0;
+  }
+  to {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+
+@keyframes buttonPop {
+  from {
+    transform: scale(0.8);
+    opacity: 0;
+  }
+  to {
+    transform: scale(1);
+    opacity: 1;
+  }
+}
+
+
+/* RESPONSIVE DESIGN */
+
+@media (max-width: 1461px) {
+  .events-container {
+  margin-left: 70px;
+  margin-top: 20px;
+  display:grid;
+  grid-template-columns: 1fr 1fr;
+  align-items: center;
+  row-gap: 10px;
+  }
+
+  .events-glasscard {
+    margin-left: 30px;
+    scale: 0.9;
+  }
+}
+
+@media (max-width: 1272px) {
+  .events-container{
+    margin-left: -40px;
+
+  }
+
+  @media (max-width:1026px) {
+    .events-container {
+      margin-left: 100px;
+      display:grid;
+      grid-template-columns: 1fr;
+      align-items: center;
+      row-gap: 10px;
+      }
+  }
+}
+
+/* Show close button in mobile view */
+@media (max-width: 1024px) {
+  #btn {
+    left: 20px;
+  }
+  #close-btn {
+    display: block; /* Show close button */
+  }
+}
+
+/* Logo styles */
+.sidebar .top .logo {
+  color: #D6EFD8;
+  display: flex;
+  height: 90px;
+  width: 100%;
+  align-items: center;
+  pointer-events: none;
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+
+.sidebar.active .top .logo {
+  opacity: 1;
+}
+
+.sidebar ul li {
+  position: relative;
+  list-style-type: none;
+  height: 50px;
+  width: 90%;
+  margin: 0.8rem auto;
+  line-height: 50px;
+}
+
+.sidebar ul li a {
+  color: #D6EFD8;
+  display: flex;
+  align-items: center;
+  text-decoration: none;
+  border-radius: 0.8rem;
+  transition: 0.25s ease-in-out background-color;
+}
+
+.sidebar ul li a:hover {
+  background-color: #80AF81;
+}
+
+.sidebar ul li a i {
+  min-width: 50px;
+  text-align: center;
+  height: 50px;
+  border-radius: 12px;
+  line-height: 50px;
+}
+
+.sidebar .nav-item {
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+
+.sidebar.active .nav-item {
+  opacity: 1;
+}
+
+/* Responsive Styles */
+@media (max-width: 1024px) {
+  .sidebar {
+    width: 0;
+    background-color: transparent;
+  }
+
+  .sidebar.active {
+    width: 100%;
+    background-color: rgba(0, 113, 45, 0.95); /* Filled background on mobile */
+  }
+
+  .sidebar .nav-item {
+    display: none;
+  }
+
+  .sidebar.active .nav-item {
+    display: inline-block;
+  }
+
+  .events-section {
+   margin-left: -80px;
+  }
+  
+  .events-title {
+    font-size: 25px;
+  }
+
+  /* need to arrange hamburger icon accdg to its margin and position */
+}
+
+@media (max-width: 936px) {
+  .events-glasscard {
+    margin-left: -10px;
+  }
+
+  @media (max-width:841px) {
+    .events-glasscard {
+      margin-left: -50px;
+    }
+  }
+
+  @media (max-width:737px) {
+    .events-glasscard {
+      margin-left: -100px;
+    }
+  }
+
+  @media (max-width:587px) {
+    .events-glasscard {
+      margin-left: -170px;
+    }
+  }
+
+  @media (max-width:526px) {
+    .events-glasscard {
+      margin-left: -200px;
+    }
+  }
+}
+
+/* repsonsiveness of search-input */
